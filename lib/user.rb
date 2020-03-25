@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
             end
             # binding.pry
             end
-            
         end
         
         if exercise_array == []
@@ -29,7 +28,6 @@ class User < ActiveRecord::Base
         else
             return exercise_array
         end
-
     end
 
     #fix bug for when 3. I can see what muscle_groups I'm working on, ON a specific day
@@ -55,24 +53,6 @@ class User < ActiveRecord::Base
             end
             exercise_array
         end
-        # binding.pry
-
-    #     if exercise_array == []
-    #         return "Sorry. Doesn't look like you worked out on #{date}."
-    #    else
-    #        return exercise_array
-    #    end
-        # binding.pry
-        # exercises_id = muscles.find_all do |workout|
-        #     workout["exercise_id"]
-        # end
-
-        # binding.pry
-
-        # exercise = Exercise.all.find_all do |exercises|
-        #     exercises.id == muscles
-            # binding.pry
-        # end
     end
 
     #1. I can return the list of all the days I worked out **
@@ -91,7 +71,8 @@ class User < ActiveRecord::Base
     def log_my_weight(weight)
         self.current_weight = weight
         self.save
-        binding.pry
+        puts "Current weight #{weight}"
+        # binding.pry
     end
 
     #6. I can also find out how much I lost compared to my starting weight
@@ -104,6 +85,29 @@ class User < ActiveRecord::Base
             return "Up #{weight_fluctuate}. We are making gains!"
         end
         # binding.pry
+    end
+
+
+    #A user can create a new exercise to add to the database
+    #need to add this to the cli and add user input for exercise and muscle group
+    def create_new_exercise(exercise, muscle_group)
+        Exercise.create(name: exercise, muscle_group: muscle_group)
+        puts "Thank you for sharing!"
+    end
+
+    #a user can log a new workout
+    #need to add this to the cli and add user input for exercise and date
+    def log_new_workout(exercise, date)
+        exercise_check = Exercise.search_exercise_by_name(exercise)
+        exercise_instance = Exercise.all.find{|exercises| exercises.name == exercise}
+            # binding.pry}
+        if exercise_check == "Sorry. We don't have any workouts called #{exercise}. Please return to the main menu to create this new exercise and share with the rest of our FitMePan crew."
+            return exercise_check
+        else
+            Workout.create(user_id: self.id, exercise_id: exercise_instance.id, date: date)
+            
+        end
+        puts "Thanks for logging your workout!"
     end
     
 

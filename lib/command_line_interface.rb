@@ -2,7 +2,7 @@
 class CLI 
 
     def fit_me_plan_image
-        puts <<-'EOF' 
+        puts " 
         -............- `...--                                                                      .............`   ``..-.                                 
         `-....-```.---------.    `.--:                                                             ``-...-..-...-- ``...--                                 
          .-..-- `-- `.``....-``---...-..-`            `...-.`...--``...--`   `...--..`               -...:   .`..:` .`..-.    `..-...`    ``.-.  `.-.`     
@@ -14,7 +14,7 @@ class CLI
                                          .-.--------:                                  ..----------                                                        
                                          `..........-                                  ............                                                        
                                                                                                      
-       EOF
+       ".colorize(:light_green)
     end
 
     def flash
@@ -32,8 +32,8 @@ class CLI
     end
 
     def welcome
-        puts "Welcome to FitMePlan, the best fitness log for fitness gurus in the world"
-        puts "Please enter your name here to log into your records:"
+        puts "Welcome to FitMePlan, the best workout log for fitness gurus in the world!!".colorize(:light_magenta)
+        puts "Please enter your name here to log into your records:".colorize(:light_magenta)
     end
 
     def user_input
@@ -52,7 +52,7 @@ class CLI
     def user_instance_check #*******
         
             puts "--------------------------------------------------------------------"
-            puts "Sorry, you don't appear to have an account with us. Would you like to make one? (enter 'yes' to make an account or 'no' to exit application)"
+            puts "Sorry, you don't appear to have an account with us. Would you like to make one? (enter 'yes' to make an account or 'no' to exit the application)"
             # new_user_input
             # new_user
             # binding.pry
@@ -86,15 +86,15 @@ class CLI
     end
 
     def options_greeting
-        puts "---------------------------------------------------------------"
-        puts "Hello, #{@user_name}. How can we help you today?"
-        puts "---------------------------------------------------------------"
+        puts "-----------------------------------------------------------"
+        puts "Hello, #{@user_name}. How can we help you today?".colorize(:light_cyan)
+        puts "-----------------------------------------------------------"
     end
 
-    #Colorized the puts comments.  Let me know if you like any of the colors or if we should leave it white.
     def options_prompt
         
-        puts "Please enter a number for one of the following options:"
+        puts "Please enter a number for one of the following options:".colorize(:light_magenta)
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         puts "1. Get a list of all the days I worked out.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
         puts "2. Find all of the workouts I did on a specific date.".colorize(:cyan)
@@ -107,13 +107,16 @@ class CLI
         puts " ---------------------------------------------------------------"
         puts "6. Find out how much weight I have lost/gained.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "7. Log Out".colorize(:cyan)
+        puts "7. Log in a new workout.".colorize(:cyan)
+        puts " ---------------------------------------------------------------"
+        puts "8. Share a new exercise.".colorize(:cyan)
+        puts " ---------------------------------------------------------------"
+        puts "9. Log Out".colorize(:cyan)
     end
 
     def option_input
         jquery = gets
-        @user_selection = jquery.strip #gets rid of endline
-        # binding.pry
+        @user_selection = jquery.strip #gets rid of ending
         #this method prompts and saves the users selection from the prompt to variable
     end
 
@@ -172,11 +175,34 @@ class CLI
         puts " ---------------------------------------------------------------"
         puts user_instance.weight_lost
         puts " ---------------------------------------------------------------"
-        # binding.pry
         return_to_main_menu
     end
 
     def selection_seven
+        puts "Log in a new Exercise."
+        exercise = gets.strip
+        puts " ---------------------------------------------------------------"
+        puts "What date would you like to log this workout? (Format: yyyy-mm-dd)"
+        date = gets.strip
+        puts " ---------------------------------------------------------------"
+        puts user_instance.log_new_workout(exercise, date)
+        puts " ---------------------------------------------------------------"
+        return_to_main_menu
+    end
+
+    def selectiong_eight
+        puts "What exercise would you'd like to share with others?"
+        exercise = gets.strip
+        puts " ---------------------------------------------------------------"
+        puts "What muscle group does this exercise target?"
+        muscle_group = gets.strip
+        puts " ---------------------------------------------------------------"
+        puts user_instance.create_new_exercise(exercise, muscle_group)
+        puts " ---------------------------------------------------------------"
+        return_to_main_menu
+    end
+
+    def selection_nine
         puts "Thank you for using FitMePlan today. Hope to see you again soon!"
     end
 
@@ -197,15 +223,14 @@ class CLI
             selection_six
         elsif @user_selection == "7"
             selection_seven
+        elsif @user_selection == "8"
+            selection_eight
+        elsif @user_selection == "9"
+            selection_nine
         else
             puts "Sorry. That doesn't seem to be a valid selection."
             return_to_main_menu
         end
-        # binding.pry
-    end
-
-    def play_workout_music
-        pid = fork{exec 'afplay', "lib/"}
     end
 
 end
