@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
     has_many :workouts
     has_many :exercises, through: :workouts
 
-    #fix output 2. I can find a list of exercises I did on a day
+    #2. I can find a list of exercises I did on a day
     def exercise_on_a_day(date)
         #iterate through workouts and find workouts.user_id == self
         my_workouts = Workout.all.select do |workout|
@@ -32,28 +32,36 @@ class User < ActiveRecord::Base
 
     end
 
-    #3. I can see what muscle_groups I'm working on, ON a specific day
+    #fix bug for when 3. I can see what muscle_groups I'm working on, ON a specific day
     def muscle_groups_on_given_day(date)
         #loop through the workouts to find all of self.workouts
         #find the instances where workout.date == date
         #return the exercise.mucle_group
-        exercise_array = []
+        
         exercise_name = self.exercise_on_a_day(date)
-        exercise_name.each do |exercise|
-            Exercise.all.each do |exercise_instances|
-                if exercise_instances.name == exercise
-                    exercise_array << exercise_instances.muscle_group
-                end
+        # binding.pry
+        if exercise_name == "Sorry. Doesn't look like you worked out on #{date}."
+            # binding.pry
+            return exercise_name
+        else
+            exercise_array = []
+            exercise_name.each do |exercise|
+                Exercise.all.each do |exercise_instances|
+                    if exercise_instances.name == exercise
+                        exercise_array << exercise_instances.muscle_group
+                    end
                 # binding.pry
+                end
             end
+            exercise_array
         end
-        exercise_array
+        # binding.pry
 
-        if exercise_array == []
-            return "Sorry. Doesn't look like you worked out on #{date}."
-       else
-           return exercise_array
-       end
+    #     if exercise_array == []
+    #         return "Sorry. Doesn't look like you worked out on #{date}."
+    #    else
+    #        return exercise_array
+    #    end
         # binding.pry
         # exercises_id = muscles.find_all do |workout|
         #     workout["exercise_id"]
@@ -81,11 +89,9 @@ class User < ActiveRecord::Base
 
     #5. I can log my weight at the end of the week
     def log_my_weight(weight)
-        #Iterate through self; 
         self.current_weight = weight
         self.save
-        # binding.pry
-        #<User:0x00007fce142a69a0 id: 5, name: "Michael", age: 32, start_weight: 215>]
+        binding.pry
     end
 
     #6. I can also find out how much I lost compared to my starting weight

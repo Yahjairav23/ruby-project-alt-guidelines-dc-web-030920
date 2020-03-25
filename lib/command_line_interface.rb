@@ -18,14 +18,14 @@ class CLI
     end
 
     def flash
-        msg = "                                                        START YOUR FITNESS GOALS TODAY                                                      "
+        msg = "                                                        LOADING FITMEPLAN                                                    "
         # Witty Quote to Create
-        system "say #{msg}"
+        # system "say #{msg}"
         puts ""
         5.times do 
             print "\r#{ ' ' * msg.size}"
             sleep 0.5
-            print "\r#{msg.colorize(:blue)}"
+            print "\r#{msg.colorize(:red)}"
             sleep 0.5
         end
         puts ""
@@ -43,68 +43,71 @@ class CLI
         # Save user to variable, then find instance of that user.
     end
 
-    def user_instance
+    def user_instance 
         @user_instance = User.all.find do |instance|
             @user_name == instance.name
         end
-
     end
 
+    def user_instance_check #*******
+        
+            puts "--------------------------------------------------------------------"
+            puts "Sorry, you don't appear to have an account with us. Would you like to make one? (enter 'yes' to make an account or 'no' to exit application)"
+            # new_user_input
+            # new_user
+            # binding.pry
+    
+    end
 
+    def new_user_input #*******
+        set_up = gets
+        @user_set_up_response = set_up.strip
+    end
 
+    def new_user #*******
+        if @user_set_up_response == "yes"
+            new_user_set
+            User.create(name: @name, age: @age, start_weight: @start_weight)
 
-    # def user_instance_check
-    #     if user_instance == nil
-    #         return "Sory, you don't appear to have an account with us. Would you like to make one?"
-    #         binding.pry
-    #         new_user_input
-    #         new_user
-    #     end
-    # end
-    # def new_user_input
-    #     set_up = gets
-    #     @user_set_up_response = set_up.strip
-    # end
-    # def new_user_set
-    #     puts "What is your name?"
-    #     @name = gets.strip
-    #     puts "How old are you?"
-    #     @age = gets.strip
-    #     puts "What is you current weight"
-    #     @start_weight = gets.strip
-    # end
-    # def new_user
-    #     if @user_set_up_response == "yes"
-    #         new_user_set
-    #         User.create(name, age, start_weight)
-          
-    #     else
-    #         selection_seven
-    #     end
-    # end
+        else
+            puts "Thank you for using FitMePlan today. We hope you will join us soon!"
+            exit
+        end
+    
+    end
 
-
+    def new_user_set #*******
+        puts "What is your name?"
+        @name = gets.strip.capitalize
+        puts "How old are you?"
+        @age = gets.strip.to_i
+        puts "What is you current weight"
+        @start_weight = gets.strip.to_i
+    end
 
     def options_greeting
+        puts "---------------------------------------------------------------"
         puts "Hello, #{@user_name}. How can we help you today?"
+        puts "---------------------------------------------------------------"
     end
 
+    #Colorized the puts comments.  Let me know if you like any of the colors or if we should leave it white.
     def options_prompt
         
         puts "Please enter a number for one of the following options:"
-        puts "1. Get a list of all the days I worked out."
+        puts "1. Get a list of all the days I worked out.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "2. Find all of the workouts I did on a specific date."
+        puts "2. Find all of the workouts I did on a specific date.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "3. Find out what muscle groups I worked out on a specific date."
+        puts "3. Find out what muscle groups I worked out on a specific date.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "4. Find exercises that work a particuar muscle group."
+        puts "4. Find exercises that work a particuar muscle group.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "5. Log my current weight."
+        puts "5. Log my current weight.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "6. Find out how much weight I have lost."
+        puts "6. Find out how much weight I have lost/gained.".colorize(:cyan)
         puts " ---------------------------------------------------------------"
-        puts "7. Log Out"
+        puts "7. Log Out".colorize(:cyan)
     end
 
     def option_input
@@ -199,6 +202,10 @@ class CLI
             return_to_main_menu
         end
         # binding.pry
+    end
+
+    def play_workout_music
+        pid = fork{exec 'afplay', "lib/"}
     end
 
 end

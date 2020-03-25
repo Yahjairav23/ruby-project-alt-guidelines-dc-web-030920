@@ -10,7 +10,7 @@ class Exercise < ActiveRecord::Base
         if exercises == []
             return "Sorry. We don't have any workouts that work #{muscle}. We will try to get you workouts for this muscle group soon."
        else
-           return exercise_array
+           return exercises
        end
         # exercise_instances.select
         # binding.pry
