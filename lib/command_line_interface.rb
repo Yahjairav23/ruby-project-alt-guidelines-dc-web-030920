@@ -2,11 +2,12 @@
 class CLI 
 
         def self.frame_one
-          puts "                    oshmdosh
-                                  9//+sshdy//
+          puts "                    
+                                   oshmdosh
+                                  9//+sshdy//               Run
                                  9//oy+ooo////
                                   9//+/.:-+///
-                                  9///:.-:+//
+                                  9///:.-:+//                   
                                  9//+:...+/
                               9//:::/:/..-o/////++/
                              9//+.+/+:+//+o:///++o/
@@ -25,12 +26,12 @@ class CLI
           system 'clear'
         end
         def self.frame_two
-          puts ":
+          puts "
                                  oshmdosh
                                 9//+sshdy//
                                9//oy+ooo////
                                 9//+/.:-+///
-                                9///:.-:+//
+                                9///:.-:+//             Laugh
                                9//+:...+/
                            9+.//+-++/+s////++o//
                             9:-:++++++o::/::+//
@@ -52,7 +53,7 @@ class CLI
           puts "
                                        oshmdosh
                                       9//+sshdy//
-                                     9//oy+ooo////
+                                     9//oy+ooo////            Jump
                                       9//+/.:-+///
                                       9///:.-:+//
                                      9//+:...+/
@@ -75,11 +76,10 @@ class CLI
         end
         def self.frame_four
           puts "
-             
                                         oshmdosh
                                        9//+sshdy//
                                       9//oy+ooo////
-                                       9//+/.:-+///
+                                       9//+/.:-+///             Love
                                        9///:.-:+//
                                       9//+:...+/   
                                     9-+-o+/+s+///
@@ -113,7 +113,7 @@ class CLI
                                      9+s++++++////
                                       9s++++o////
                                       9o//++/////
-                                      9++:+///-///
+                                      9++:+///-///                Dance
                                        9o+://:///
                                        9h-+////
                                       9++o/////
@@ -133,7 +133,7 @@ class CLI
                                     9//+:...+/
                                   9:/-++/+s/////
                                    9:/+/+o/+///////
-                                   9++//+o+/++o/////
+                                   9++//+o+/++o/////                  Walk
                                    9+o++++o//////
                                     9s++++o/////
                                     9o//o+//:///
@@ -155,7 +155,7 @@ class CLI
                                      9//+/.:-+///
                                      9///:.-:+//
                                     9//+:...+/
-                                   9-:+-.-o/////
+                                   9-:+-.-o/////                Be Yourself
                                    9::++++o/////
                                    9::///+++//////
                                    9oo//++o++o+////
@@ -174,23 +174,22 @@ class CLI
         end
         def self.frame_eight
           puts "
-          
                                         oshmdosh
                                        9//+sshdy//
                                       9//oy+ooo////
-                                       9//+/.:-+///
+                                       9//+/.:-+///            CODE!!!!
                                        9///:.-:+//
                                       9//+:...+/
                                      9-:+::/o//////
-                                     9-/+++++://////
+                                     9-/+++++://////                          CODE!!!!       
                                      9+/:::+s//+////
                                      9oo++++o+++////
                                      9oo++++o///////
                                       9o//+++/:////
-                                      9+:+++///:////
+                                      9+:+++///:////                    CODE!!!!
                                        9://////////
                                     9:-//+s/y/////
-                                  9++://///+oos////
+                                  9++://///+oos////       CODE!!!!
                                 9+s/h/////////////
                                ////9sso/////
           -:::::::::::::::::::::::::::::::::::::::::::::
@@ -211,7 +210,6 @@ class CLI
         end
         def self.go
           system 'clear'
-          puts "\n\n💃🏻 TIME TO HAVE SOME FUN 🕺🏿 \n\n"
           self.animation
         end
       
@@ -247,14 +245,100 @@ class CLI
 
     def welcome
         puts "Welcome to FitMePlan, the best workout log for fitness gurus in the world!!".colorize(:light_magenta)
-        puts "Please enter your name here to log into your records:".colorize(:light_magenta)
+        puts "Please enter 'gym' if you would like to log in as a Gym Owner.".colorize(:light_magenta)
+        puts "Otherwise, please enter your name here to log into your records as a User:".colorize(:light_magenta)
     end
 
     def user_input
-        jquery = gets
+      @user_name = gets.strip.capitalize
+    end
+
+
+    def gym_welcome
+        puts "What is the name of your facility?"
+        # self.gym_input #could possibly run these in the run file
+        # self.gym_instance
+      
+    end
+
+    def gym_input
+      @gym_name = gets.strip.titlecase
+    end
+
+    def gym_instance
+      @gym_instance = Gym.all.find do |instance|
+        @gym_name == instance.name
         # binding.pry
-        @user_name = jquery.strip.capitalize #gets rid of endline
-        # Save user to variable, then find instance of that user.
+      end
+    end
+
+    def non_valid_gym_instance_check
+        puts "Sorry, your facility does not seem to be in our system." 
+        puts "Please get in contact with our facilities rep at facilities.rep@fitmeplan.net if you would like to open an account for your facility."
+        puts "Hope you will join us soon!"
+        exit
+    end
+
+    # def validate_gym 
+    #   if @gym_instance == nil
+    #     non_valid_gym_instance_check
+    #   end
+  
+    # end
+
+    def gym_options_greeting
+      "Hello, #{@gym_name}. How may we assist you today?"
+    end
+
+    def gym_options_prompt
+      puts "Please enter a number for one of the following options:".colorize(:light_magenta)
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      puts "1. View a list of your facility members.".colorize(:light_magenta)
+      puts " ---------------------------------------------------------------"
+      puts "2. View the last date a particular member attended your facility.".colorize(:light_magenta)
+      puts " ---------------------------------------------------------------"
+      puts "3. Find the average age of your members.".colorize(:light_magenta)
+      puts " ---------------------------------------------------------------"
+      puts "4. Log out".colorize(:light_magenta)
+    end
+
+    def gym_option_input
+      @gym_option_input = gets.strip
+    end
+    
+
+    def gym_menu_return
+      puts "Enter any key to return to the main menu."
+      gets
+      gym_options_prompt
+      gym_option_input
+      gym_method_selection
+    end
+    
+    def gym_selection_one
+        puts "--------------------------------------------------------------------"
+        puts gym_instance.find_all_gym_users
+        puts "--------------------------------------------------------------------"
+        gym_menu_return
+    end
+
+    def gym_selection_two
+      puts "--------------------------------------------------------------------"
+      puts gym_instance.last_workout_date
+      # binding.pry
+      puts "--------------------------------------------------------------------"
+      gym_menu_return
+    end
+
+    def gym_selection_three
+      puts "--------------------------------------------------------------------"
+      puts gym_instance.gym_average_age
+      puts "--------------------------------------------------------------------"
+      gym_menu_return
+    end
+
+    def gym_selection_four
+      puts "Thank you for using FitMePlans Gym app!"
     end
 
     def user_instance 
@@ -263,8 +347,7 @@ class CLI
         end
     end
 
-    def user_instance_check #*******
-        
+    def user_instance_check 
             puts "--------------------------------------------------------------------"
             puts "Sorry, you don't appear to have an account with us. Would you like to make one? (enter 'yes' to make an account or 'no' to exit the application)"
             # new_user_input
@@ -273,12 +356,12 @@ class CLI
     
     end
 
-    def new_user_input #*******
+    def new_user_input 
         set_up = gets
         @user_set_up_response = set_up.strip
     end
 
-    def new_user #*******
+    def new_user 
         if @user_set_up_response == "yes"
             new_user_set
             User.create(name: @name, age: @age, start_weight: @start_weight)
@@ -287,10 +370,10 @@ class CLI
             puts "Thank you for using FitMePlan today. We hope you will join us soon!"
             exit
         end
-    
+  
     end
 
-    def new_user_set #*******
+    def new_user_set 
         puts "What is your name?"
         @name = gets.strip.capitalize
         puts "How old are you?"
@@ -446,5 +529,26 @@ class CLI
             return_to_main_menu
         end
     end
+
+    def gym_method_selection
+      # user = user_instance.name
+      # selection = 1
+      if @gym_option_input == "1"
+          gym_selection_one
+      elsif @gym_option_input == "2"
+          gym_selection_two
+      elsif @gym_option_input == "3"
+          gym_selection_three
+      elsif @gym_option_input == "4"
+          gym_selection_four
+      else
+          puts "Sorry. That doesn't seem to be a valid selection."
+          gym_menu_return
+      end
+    end
+
+
+
+    
 
 end

@@ -3,6 +3,7 @@
 User.destroy_all
 Exercise.destroy_all
 Workout.destroy_all
+Gym.destroy_all
 
 #Users
 yari = User.create(name: "Yari", age: 27, start_weight: 175)
@@ -96,6 +97,7 @@ workout27 = Workout.create(user_id: alex.id, exercise_id: squats.id, date: "2020
 workout28 = Workout.create(user_id: ann.id, exercise_id: squats.id, date: "2020-03-26", gym_id: gym8.id)
 workout29 = Workout.create(user_id: uzoma.id, exercise_id: squats.id, date: "2020-03-26", gym_id: gym9.id)
 workout30 = Workout.create(user_id: yari.id, exercise_id: squats.id, date: "2020-03-14", gym_id: gym10.id)
+workout31 = Workout.create(user_id: alex.id, exercise_id: squats.id, date: "2020-03-30", gym_id: gym7.id)
 
 
 
