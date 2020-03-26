@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     has_many :workouts
     has_many :exercises, through: :workouts
+    # has_many :gyms, through: :workouts
 
     #2. I can find a list of exercises I did on a day
     def exercise_on_a_day(date)

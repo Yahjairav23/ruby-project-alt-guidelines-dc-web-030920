@@ -4,6 +4,7 @@ class ExercisesFile < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :muscle_group
       t.string :exercise_demonstration_link, default: nil
+      
     end
   end
 end
