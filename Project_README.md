@@ -32,7 +32,8 @@ As a gym owner, one can:
 
 After you have succesfully forked and cloned down this project, go into your IDE and type in ruby bin/run.rb into your command line.  This will begin our program with a short visual of a running man sequence and the title to our CLI app: FitMePlan.
 
-[logo]: https://photos.google.com/share/AF1QipMEfmG3vJVMiNrycWcuwTxTda5e1mXOMYS-Ia-_Br52xyH5sJbIYTtVSUFItjdMEg?key=TkUzMUp2b0p5clIwc1cySDlXWUN1SnY3OXRzdnNR "Logo Title Text 2"
+![alt text](https://photos.google.com/share/AF1QipMEfmG3vJVMiNrycWcuwTxTda5e1mXOMYS-Ia-_Br52xyH5sJbIYTtVSUFItjdMEg?key=TkUzMUp2b0p5clIwc1cySDlXWUN1SnY3OXRzdnNR "Logo Title Text 1")
+
  
 
 
