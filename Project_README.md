@@ -30,7 +30,13 @@ As a gym owner, one can:
 
 ### Tutorial
 
-After you have succesfully forked and cloned down this project, go into your IDE and type in ruby bin/run.rb into your command line.  This will begin our program with a short visual of a running man sequence
-(https://app.slack.com/client/T02MD9XTF/D010KUF9B36/thread/CU78N1T0X-1585192886.020100)
+After you have succesfully forked and cloned down this project, go into your IDE and type in ruby bin/run.rb into your command line.  This will begin our program with a short visual of a running man sequence and the title to our CLI app: FitMePlan.
 
-(https://camo.githubusercontent.com/ab14403ba70822e0ff19757d27ca98ac2a32cbe3/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4973314f31545756304c454a692f67697068792e676966)
+[logo]: https://photos.google.com/share/AF1QipMEfmG3vJVMiNrycWcuwTxTda5e1mXOMYS-Ia-_Br52xyH5sJbIYTtVSUFItjdMEg?key=TkUzMUp2b0p5clIwc1cySDlXWUN1SnY3OXRzdnNR "Logo Title Text 2"
+ 
+
+
+
+
+You will then be prompted to either type in 'gym' to access the gym owner logs, a user name to access a user names workout log, or to 
+
