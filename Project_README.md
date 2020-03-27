@@ -9,6 +9,14 @@ By: Yahjaira Vasquez & Uzoma Ariguzo
 ### Installation
 To install our application, you can fork and clone project from git hub. Once you have cloneed down the project and open the file on your terminal, you can type ruby bin/run.rb to get the application running.
 
+### Tutorial
+
+After you have succesfully forked and cloned down this project, go into your IDE and type in ruby bin/run.rb into your command line.  This will begin our program with a short visual of a running man sequence and the title to our CLI app: FitMePlan.
+
+![text](https://i.stack.imgur.com/KBimL.png "Logo Title Text 1")
+
+You will then be prompted to either type in 'gym' to access the gym owner logs, a user name to access a user names workout log, or to create a new user log in.
+
 ### Application Uses
 FitMePlan is an application that can be utilized by both fitness enthusiasts and gym owners. 
 
@@ -28,16 +36,4 @@ As a gym owner, one can:
 * View the last date a particular member attended their facility
 * Find the average age of your members
 
-### Tutorial
-
-After you have succesfully forked and cloned down this project, go into your IDE and type in ruby bin/run.rb into your command line.  This will begin our program with a short visual of a running man sequence and the title to our CLI app: FitMePlan.
-
-![alt text](https://photos.google.com/share/AF1QipMEfmG3vJVMiNrycWcuwTxTda5e1mXOMYS-Ia-_Br52xyH5sJbIYTtVSUFItjdMEg?key=TkUzMUp2b0p5clIwc1cySDlXWUN1SnY3OXRzdnNR "Logo Title Text 1")
-
- 
-
-
-
-
-You will then be prompted to either type in 'gym' to access the gym owner logs, a user name to access a user names workout log, or to 
 
