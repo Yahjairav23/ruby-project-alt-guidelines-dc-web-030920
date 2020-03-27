@@ -19,11 +19,7 @@ class Gym < ActiveRecord::Base
 
     # 1. Gym can find out all of its users
     def find_all_gym_users
-    # binding.pry 
-        
         self.gym_user_instances.map{|user| user.name }  
-        
-        
     end
 
 
@@ -42,8 +38,10 @@ class Gym < ActiveRecord::Base
             workout.date
         end.sort.last
         users = self.find_all_gym_users.last
-        workout_date_log[users] = date
-        workout_date_log
+        "#{users} : #{date}"
+        # workout_date_log
+
+
     end 
 
 end

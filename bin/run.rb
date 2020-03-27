@@ -2,9 +2,9 @@ require_relative '../config/environment'
 
 
 @cli = CLI.new
-# CLI.animation
-# CLI.go
-# @cli.flash
+CLI.animation
+CLI.go
+@cli.flash
 @cli.fit_me_plan_image
 @cli.welcome
 

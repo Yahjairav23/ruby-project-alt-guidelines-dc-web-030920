@@ -12,10 +12,9 @@ class Exercise < ActiveRecord::Base
        else
            return exercises
        end
-        # exercise_instances.select
-        # binding.pry
     end
 
+    
     def self.search_exercise_by_name(exercise)
         exercises = self.all.find_all do |exercise_instance|                      
             exercise_instance.name == exercise

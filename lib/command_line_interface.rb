@@ -3,11 +3,11 @@ class CLI
 
         def self.frame_one
           puts "                    
-                                   oshmdosh
+                                   oshmdosh       '
                                   9//+sshdy//               Run
-                                 9//oy+ooo////
+                                 9//oy+ooo////  '
                                   9//+/.:-+///
-                                  9///:.-:+//                   
+                                  9///:.-:+//     '              
                                  9//+:...+/
                               9//:::/:/..-o/////++/
                              9//+.+/+:+//+o:///++o/
@@ -28,12 +28,12 @@ class CLI
         def self.frame_two
           puts "
                                  oshmdosh
-                                9//+sshdy//
-                               9//oy+ooo////
+                                9//+sshdy//   '
+                               9//oy+ooo////    '
                                 9//+/.:-+///
-                                9///:.-:+//             Laugh
+                                9///:.-:+//  '           Run
                                9//+:...+/
-                           9+.//+-++/+s////++o//
+                          9+.//+-++/+s////++o//
                             9:-:++++++o::/::+//
                              9:++/o++++/:///
                                9+o++++o///
@@ -52,9 +52,9 @@ class CLI
         def self.frame_three
           puts "
                                        oshmdosh
-                                      9//+sshdy//
+                                      9//+sshdy// '
                                      9//oy+ooo////            Jump
-                                      9//+/.:-+///
+                                      9//+/.:-+///  '
                                       9///:.-:+//
                                      9//+:...+/
                                    9-:+:+:-:o////
@@ -76,19 +76,19 @@ class CLI
         end
         def self.frame_four
           puts "
-                                        oshmdosh
+                                        oshmdosh  '
                                        9//+sshdy//
-                                      9//oy+ooo////
+                                      9//oy+ooo////   '
                                        9//+/.:-+///             Love
-                                       9///:.-:+//
+                                       9///:.-:+//  '
                                       9//+:...+/   
-                                    9-+-o+/+s+///
+                                    9-+-o+/+s+///   '
                                     9-/+++++o+//+++///
                                       9+/o++++:/++///
                                       9+s++++++////
-                                      9s+++++///
+                                      9s+++++///    '
                                       9o//+//+//
-                                        9:///-///
+                                        9:///-///   '
                                       9oo+.+:://
                                       9y+y.+///
                                       9so+:o///
@@ -101,12 +101,12 @@ class CLI
         end
         def self.frame_five
           puts "
-                                         oshmdosh
-                                       9//+sshdy//
+                                         oshmdosh   
+                                       9//+sshdy//    '
                                       9//oy+ooo////
-                                       9//+/.:-+///
+                                       9//+/.:-+///   '
                                        9///:.-:+//
-                                      9//+:...+/
+                                      9//+:...+/    '
                                     9.+-o+//s+////
                                     9-/+++++o+/////
                                         9o++/:++o////
@@ -125,18 +125,18 @@ class CLI
         end
         def self.frame_six
           puts "  
-                                      oshmdosh
+                                      oshmdosh    
                                      9//+sshdy//
                                     9//oy+ooo////
-                                     9//+/.:-+///
+                                     9//+/.:-+///   '
                                      9///:.-:+//
-                                    9//+:...+/
+                                    9//+:...+/    '
                                   9:/-++/+s/////
                                    9:/+/+o/+///////
                                    9++//+o+/++o/////                  Walk
                                    9+o++++o//////
-                                    9s++++o/////
-                                    9o//o+//:///
+                                    9s++++o/////    '
+                                    9o//o+//:///    '
                                      9://///-/////
                                      9-o+:/://///
                                     9+-y/y//////
@@ -152,10 +152,10 @@ class CLI
                                       oshmdosh
                                      9//+sshdy//
                                     9//oy+ooo////
-                                     9//+/.:-+///
-                                     9///:.-:+//
-                                    9//+:...+/
-                                   9-:+-.-o/////                Be Yourself
+                                     9//+/.:-+/// '
+                                     9///:.-:+//    '
+                                    9//+:...+/  '
+                                   9-:+-.-o/////   '             Be Yourself
                                    9::++++o/////
                                    9::///+++//////
                                    9oo//++o++o+////
@@ -174,18 +174,18 @@ class CLI
         end
         def self.frame_eight
           puts "
-                                        oshmdosh
+                                        oshmdosh    
                                        9//+sshdy//
-                                      9//oy+ooo////
+                                      9//oy+ooo//// '
                                        9//+/.:-+///            CODE!!!!
-                                       9///:.-:+//
+                                       9///:.-:+//  '
                                       9//+:...+/
-                                     9-:+::/o//////
+                                     9-:+::/o//////   '
                                      9-/+++++://////                          CODE!!!!       
                                      9+/:::+s//+////
-                                     9oo++++o+++////
+                                     9oo++++o+++////    '
                                      9oo++++o///////
-                                      9o//+++/:////
+                                      9o//+++/:////   '
                                       9+:+++///:////                    CODE!!!!
                                        9://////////
                                     9:-//+s/y/////
@@ -226,13 +226,12 @@ class CLI
                                          .-.--------:                                  ..----------                                                        
                                          `..........-                                  ............                                                        
                                                                                                      
-       ".colorize(:light_green)
+       ".colorize(:green)
     end
 
     def flash
-        msg = "                                                        LOADING FITMEPLAN                                                    "
-        # Witty Quote to Create
-        # system "say #{msg}"
+        msg = "                                                        LOADING FIT ME PLAN                                                    "
+        system "say #{msg}"
         puts ""
         5.times do 
             print "\r#{ ' ' * msg.size}"
@@ -255,10 +254,7 @@ class CLI
 
 
     def gym_welcome
-        puts "What is the name of your facility?"
-        # self.gym_input #could possibly run these in the run file
-        # self.gym_instance
-      
+        puts "What is the name of your facility?".colorize(:light_green)
     end
 
     def gym_input
@@ -268,38 +264,30 @@ class CLI
     def gym_instance
       @gym_instance = Gym.all.find do |instance|
         @gym_name == instance.name
-        # binding.pry
       end
     end
 
     def non_valid_gym_instance_check
-        puts "Sorry, your facility does not seem to be in our system." 
-        puts "Please get in contact with our facilities rep at facilities.rep@fitmeplan.net if you would like to open an account for your facility."
-        puts "Hope you will join us soon!"
+        puts "Sorry, your facility does not seem to be in our system.".colorize(:light_magenta)
+        puts "Please get in contact with our facilities rep at facilities.rep@fitmeplan.net if you would like to open an account for your facility.".colorize(:light_magenta)
+        puts "Hope you will join us soon!".colorize(:light_magenta)
         exit
     end
-
-    # def validate_gym 
-    #   if @gym_instance == nil
-    #     non_valid_gym_instance_check
-    #   end
-  
-    # end
 
     def gym_options_greeting
       "Hello, #{@gym_name}. How may we assist you today?"
     end
 
     def gym_options_prompt
-      puts "Please enter a number for one of the following options:".colorize(:light_magenta)
+      puts "Please enter a number for one of the following options:".colorize(:light_green)
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts "1. View a list of your facility members.".colorize(:light_magenta)
+      puts "1. View a list of your facility members.".colorize(:light_green)
       puts " ---------------------------------------------------------------"
-      puts "2. View the last date a particular member attended your facility.".colorize(:light_magenta)
+      puts "2. View the last person attended your facility and on what date.".colorize(:light_green)
       puts " ---------------------------------------------------------------"
-      puts "3. Find the average age of your members.".colorize(:light_magenta)
+      puts "3. Find the average age of your members.".colorize(:light_green)
       puts " ---------------------------------------------------------------"
-      puts "4. Log out".colorize(:light_magenta)
+      puts "4. Log out".colorize(:light_green)
     end
 
     def gym_option_input
@@ -308,7 +296,7 @@ class CLI
     
 
     def gym_menu_return
-      puts "Enter any key to return to the main menu."
+      puts "Enter any key to return to the main menu.".colorize(:light_green)
       gets
       gym_options_prompt
       gym_option_input
@@ -325,7 +313,6 @@ class CLI
     def gym_selection_two
       puts "--------------------------------------------------------------------"
       puts gym_instance.last_workout_date
-      # binding.pry
       puts "--------------------------------------------------------------------"
       gym_menu_return
     end
@@ -338,7 +325,7 @@ class CLI
     end
 
     def gym_selection_four
-      puts "Thank you for using FitMePlans Gym app!"
+      puts "Thank you for using FitMePlans Gym app!".colorize(:light_green)
     end
 
     def user_instance 
@@ -349,11 +336,7 @@ class CLI
 
     def user_instance_check 
             puts "--------------------------------------------------------------------"
-            puts "Sorry, you don't appear to have an account with us. Would you like to make one? (enter 'yes' to make an account or 'no' to exit the application)"
-            # new_user_input
-            # new_user
-            # binding.pry
-    
+            puts "Sorry, you don't appear to have an account with us. Would you like to make one? (enter 'yes' to make an account or 'no' to exit the application)".colorize(:light_cyan)
     end
 
     def new_user_input 
@@ -367,18 +350,18 @@ class CLI
             User.create(name: @name, age: @age, start_weight: @start_weight)
 
         else
-            puts "Thank you for using FitMePlan today. We hope you will join us soon!"
+            puts "Thank you for using FitMePlan today. We hope you will join us soon!".colorize(:light_cyan)
             exit
         end
   
     end
 
     def new_user_set 
-        puts "What is your name?"
+        puts "What is your name?".colorize(:light_cyan)
         @name = gets.strip.capitalize
-        puts "How old are you?"
+        puts "How old are you?".colorize(:light_cyan)
         @age = gets.strip.to_i
-        puts "What is you current weight"
+        puts "What is you current weight".colorize(:light_cyan)
         @start_weight = gets.strip.to_i
     end
 
@@ -413,12 +396,11 @@ class CLI
 
     def option_input
         jquery = gets
-        @user_selection = jquery.strip #gets rid of ending
-        #this method prompts and saves the users selection from the prompt to variable
+        @user_selection = jquery.strip
     end
 
     def return_to_main_menu
-        puts "Enter any key to return to the main menu."
+        puts "Enter any key to return to the main menu.".colorize(:light_cyan)
         gets
         options_prompt
         option_input
@@ -433,7 +415,7 @@ class CLI
     end
 
     def selection_two
-        puts "What date should we look for? (format: yyyy-mm-dd)"
+        puts "What date should we look for? (format: yyyy-mm-dd)".colorize(:light_cyan)
         date = gets.strip
         puts " ---------------------------------------------------------------"
         puts user_instance.exercise_on_a_day(date) 
@@ -442,7 +424,7 @@ class CLI
     end
 
     def selection_three
-        puts "What date should we look for? (format: yyyy-mm-dd)"
+        puts "What date should we look for? (format: yyyy-mm-dd)".colorize(:light_cyan)
         date = gets.strip
         puts " ---------------------------------------------------------------"
         puts user_instance.muscle_groups_on_given_day(date) 
@@ -451,7 +433,7 @@ class CLI
     end
 
     def selection_four
-        puts "What muscle group would you like to find workouts for today?"
+        puts "What muscle group would you like to find workouts for today?".colorize(:light_cyan)
         muscle = gets.strip
         puts " ---------------------------------------------------------------"
         puts Exercise.search_exercise_by_muscle_group(muscle)
@@ -460,7 +442,7 @@ class CLI
     end
 
     def selection_five
-        puts "What is your current weight?"
+        puts "What is your current weight?".colorize(:light_cyan)
         weight = gets.strip.to_i
         puts " ---------------------------------------------------------------"
         puts user_instance.log_my_weight(weight)
@@ -476,10 +458,10 @@ class CLI
     end
 
     def selection_seven
-        puts "Log in a new Exercise."
+        puts "Log in a new Exercise.".colorize(:light_cyan)
         exercise = gets.strip
         puts " ---------------------------------------------------------------"
-        puts "What date would you like to log this workout? (Format: yyyy-mm-dd)"
+        puts "What date would you like to log this workout? (Format: yyyy-mm-dd)".colorize(:light_cyan)
         date = gets.strip
         puts " ---------------------------------------------------------------"
         puts user_instance.log_new_workout(exercise, date)
@@ -487,11 +469,11 @@ class CLI
         return_to_main_menu
     end
 
-    def selectiong_eight
-        puts "What exercise would you'd like to share with others?"
+    def selection_eight
+        puts "What exercise would you'd like to share with others?".colorize(:light_cyan)
         exercise = gets.strip
         puts " ---------------------------------------------------------------"
-        puts "What muscle group does this exercise target?"
+        puts "What muscle group does this exercise target?".colorize(:light_cyan)
         muscle_group = gets.strip
         puts " ---------------------------------------------------------------"
         puts user_instance.create_new_exercise(exercise, muscle_group)
@@ -500,12 +482,10 @@ class CLI
     end
 
     def selection_nine
-        puts "Thank you for using FitMePlan today. Hope to see you again soon!"
+        puts "Thank you for using FitMePlan today. Hope to see you again soon!".colorize(:light_cyan)
     end
 
     def user_method_selection
-        # user = user_instance.name
-        # selection = 1
         if @user_selection == "1"
             selection_one
         elsif @user_selection == "2"
@@ -525,14 +505,12 @@ class CLI
         elsif @user_selection == "9"
             selection_nine
         else
-            puts "Sorry. That doesn't seem to be a valid selection."
+            puts "Sorry. That doesn't seem to be a valid selection.".colorize(:light_cyan)
             return_to_main_menu
         end
     end
 
     def gym_method_selection
-      # user = user_instance.name
-      # selection = 1
       if @gym_option_input == "1"
           gym_selection_one
       elsif @gym_option_input == "2"
@@ -542,7 +520,7 @@ class CLI
       elsif @gym_option_input == "4"
           gym_selection_four
       else
-          puts "Sorry. That doesn't seem to be a valid selection."
+          puts "Sorry. That doesn't seem to be a valid selection.".colorize(:light_magenta)
           gym_menu_return
       end
     end
