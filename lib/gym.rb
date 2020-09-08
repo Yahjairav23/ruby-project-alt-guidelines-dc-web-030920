@@ -39,7 +39,6 @@ class Gym < ActiveRecord::Base
         end.sort.last
         users = self.find_all_gym_users.last
         "#{users} : #{date}"
-        # workout_date_log
 
 
     end 

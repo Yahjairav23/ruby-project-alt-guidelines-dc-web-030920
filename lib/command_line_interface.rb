@@ -242,6 +242,7 @@ class CLI
         puts ""
     end
 
+  
     def welcome
         puts "Welcome to FitMePlan, the best workout log for fitness gurus in the world!!".colorize(:light_magenta)
         puts "Please enter 'gym' if you would like to log in as a Gym Owner.".colorize(:light_magenta)

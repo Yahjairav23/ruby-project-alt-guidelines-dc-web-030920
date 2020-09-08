@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
     has_many :workouts
     has_many :exercises, through: :workouts
-    # has_many :gyms, through: :workouts
 
     #2. I can find a list of exercises I did on a day
     def exercise_on_a_day(date)
@@ -17,9 +16,7 @@ class User < ActiveRecord::Base
         exercise_array = []
         exercise_list = workouts_for_date.each do |exercise_id|
             Exercise.all.each do |exercise_instances|
-            if exercise_instances.id == exercise_id
-                exercise_array << exercise_instances.name
-            end
+                exercise_array << exercise_instances.name if (exercise_instances.id == exercise_id)
             end
         end
         
@@ -44,46 +41,21 @@ class User < ActiveRecord::Base
             workouts["date"] == date
         end.map {|workout_instance| workout_instance.exercise_id}
         
-        
-        # exercise_array = []
-        # exercise_list = workouts_for_date.each do |exercise_id|
-        #     Exercise.all.each do |exercise_instances|
-        #     if exercise_instances.id == exercise_id
-        #         exercise_array << exercise_instances.name
-        #     end
-        #     end
-        # end
          exercise_array = []
-        #  binding.pry
             muscle_groups = workouts_for_date.each do |exercise|
                 Exercise.all.each do |exercise_instances|
-                    if exercise_instances.id == exercise
-                        exercise_array << exercise_instances.muscle_group
-                    end
+                        exercise_array << exercise_instances.muscle_group if (exercise_instances.id == exercise)
                 end
             end
         
         if exercise_array == []
-            # binding.pry
+         
             return "Sorry. Doesn't look like you worked out on #{date}.".colorize(:light_cyan)
         else
-            # exercise_array = []
-            # exercise_name.each do |exercise|
-            #     Exercise.all.each do |exercise_instances|
-            #         if exercise_instances.name == exercise
-            #             exercise_array << exercise_instances.muscle_group
-            #         end
-            #     end
-            # end
+          
             exercise_array
         end
 
-    #     if exercise_array == []
-    #         return "Sorry. Doesn't look like you worked out on #{date}.".colorize(:light_cyan)
-    #    else
-    #        return exercise_array
-    #    end
-       
     end
 
     #1. I can return the list of all the days I worked out **
